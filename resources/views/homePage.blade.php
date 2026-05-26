@@ -438,20 +438,7 @@
 
 <div class="guest-home">
 
-    <nav class="guest-navbar">
-        <div class="guest-navbar-content">
-            <a href="{{ route('landing') }}" class="guest-logo">
-                💙 Ampara.se
-            </a>
 
-            <div class="guest-menu">
-                <a href="{{ route('landing') }}">Início</a>
-                <a href="{{ route('projects') }}">Projetos</a>
-                <a href="{{ route('login') }}" class="btn-login-nav">Entrar</a>
-                <a href="{{ route('signup') }}" class="btn-signup-nav">Criar conta</a>
-            </div>
-        </div>
-    </nav>
 
     <main class="guest-container">
 
