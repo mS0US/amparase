@@ -5,6 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <style>
+    .ampara-navbar {
+        width: 100%;
+        background: #ffffff;
+        border-bottom: 1px solid #dbeafe;
+        box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .ampara-navbar-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .ampara-logo {
+        color: #2563eb;
+        font-size: 1.5rem;
+        font-weight: 900;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        white-space: nowrap;
+    }
+
+    .ampara-menu {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .ampara-menu a {
+        color: #475569;
+        text-decoration: none;
+        font-weight: 800;
+        padding: 10px 14px;
+        border-radius: 12px;
+        transition: 0.3s;
+        font-size: 0.95rem;
+    }
+
+    .ampara-menu a:hover {
+        background: #eff6ff;
+        color: #2563eb;
+    }
+
+    .ampara-btn-login {
+        border: 2px solid #bfdbfe;
+        color: #1e40af !important;
+        background: white;
+    }
+
+    .ampara-btn-signup {
+        background: #2563eb !important;
+        color: white !important;
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.22);
+    }
+
+    .ampara-btn-signup:hover {
+        background: #1d4ed8 !important;
+        color: white !important;
+    }
+
+    @media (max-width: 768px) {
+        .ampara-navbar-container {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .ampara-menu {
+            width: 100%;
+        }
+
+        .ampara-menu a {
+            width: 100%;
+        }
+    }
     .landing {
         background: linear-gradient(135deg, #eff6ff 0%, #ffffff 45%, #dbeafe 100%);
         min-height: 100vh;
@@ -301,6 +386,33 @@
         }
     }
 </style>
+<nav class="ampara-navbar">
+    <div class="ampara-navbar-container">
+
+        <a href="{{ route('landing') }}" class="ampara-logo">
+            💙 Ampara.se
+        </a>
+
+        <div class="ampara-menu">
+            <a href='/landPage'>Início</a>
+            <a href="/homePage">Home</a>
+            <a href="{{ route('projects') }}">Projetos</a>
+            <a href="{{ route('donations') }}">Doações</a>
+            <a href="{{ route('payments') }}">Pagamentos</a>
+            <a href="{{ route('profile') }}">Perfil</a>
+            <a href="{{ route('admin') }}">Admin</a>
+
+            <a href="/login" class="ampara-btn-login">
+                Entrar
+            </a>
+
+            <a href="/signup" class="ampara-btn-signup">
+                Criar conta
+            </a>
+        </div>
+
+    </div>
+</nav>  
 
 <div class="landing">
 
@@ -317,11 +429,11 @@
             </p>
 
             <div class="hero-buttons">
-                <a href="{{ route('signup') }}" class="btn-primary-ampara">
+                <a href="/login" class="btn-primary-ampara">
                     Começar agora
                 </a>
 
-                <a href="{{ route('projects') }}" class="btn-secondary-ampara">
+                <a href="/homePage" class="btn-secondary-ampara">
                     Explorar projetos
                 </a>
             </div>
@@ -433,7 +545,7 @@
             que querem apoiar sua jornada.
         </p>
 
-        <a href="{{ route('signup') }}">
+        <a href="/signup">
             Criar minha conta
         </a>
     </section>
